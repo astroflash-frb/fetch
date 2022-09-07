@@ -8,7 +8,7 @@ import string
 import numpy as np
 import pandas as pd
 from tensorflow.keras.models import Model
-from tensorflow.keras.models import model_from_yaml
+from tensorflow.keras.models import  model_from_json
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.utils import get_file
 
@@ -89,7 +89,7 @@ def get_model(model_idx):
 
     # Read the model from the yaml
     with open(model_yaml, "r") as y:
-        model = model_from_yaml(y.read())
+        model =  model_from_json(y.read())
 
     # get the model weights, if not present download them.
     model_list = pd.read_csv(f"{path}/models/model_list.csv")

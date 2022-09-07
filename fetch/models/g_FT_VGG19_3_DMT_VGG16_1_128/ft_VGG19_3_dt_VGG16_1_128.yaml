@@ -7,7 +7,7 @@ config:
   layers:
   - class_name: InputLayer
     config:
-      batch_input_shape: !!python/tuple [null, 256, 256, 1]
+      batch_input_shape:   [null, 256, 256, 1]
       dtype: float32
       name: data_freq_time
       sparse: false
@@ -15,7 +15,7 @@ config:
     name: data_freq_time
   - class_name: InputLayer
     config:
-      batch_input_shape: !!python/tuple [null, 256, 256, 1]
+      batch_input_shape:   [null, 256, 256, 1]
       dtype: float32
       name: data_dm_time
       sparse: false
@@ -31,17 +31,17 @@ config:
         config: {}
       bias_regularizer: null
       data_format: channels_last
-      dilation_rate: &id001 !!python/tuple [1, 1]
+      dilation_rate: &id001   [1, 1]
       filters: 3
       kernel_constraint: null
       kernel_initializer:
         class_name: VarianceScaling
         config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
       kernel_regularizer: null
-      kernel_size: &id002 !!python/tuple [2, 2]
+      kernel_size: &id002   [2, 2]
       name: conv2d_1__0
       padding: valid
-      strides: &id003 !!python/tuple [1, 1]
+      strides: &id003   [1, 1]
       trainable: true
       use_bias: true
     inbound_nodes:
@@ -86,7 +86,7 @@ config:
       layers:
       - class_name: InputLayer
         config:
-          batch_input_shape: !!python/tuple [null, null, null, 3]
+          batch_input_shape:   [null, null, null, 3]
           dtype: float32
           name: input_2
           sparse: false
@@ -109,15 +109,15 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block1_conv1
           padding: same
-          strides: &id004 !!python/tuple [1, 1]
-          trainable: &id005 !!python/object/apply:numpy.core.multiarray.scalar
-          - &id006 !!python/object/apply:numpy.dtype
+          strides: &id004   [1, 1]
+          trainable: &id005
+          - &id006
             args: [b1, 0, 1]
-            state: !!python/tuple [3, '|', null, null, null, -1, -1, 0]
-          - !!binary |
+            state:   [3, '|', null, null, null, -1, -1, 0]
+          -  |
             AA==
           use_bias: true
         inbound_nodes:
@@ -143,7 +143,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block1_conv2
           padding: same
           strides: *id004
@@ -160,8 +160,8 @@ config:
           data_format: channels_last
           name: block1_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block1_conv2
@@ -186,7 +186,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block2_conv1
           padding: same
           strides: *id004
@@ -215,7 +215,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block2_conv2
           padding: same
           strides: *id004
@@ -232,8 +232,8 @@ config:
           data_format: channels_last
           name: block2_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block2_conv2
@@ -258,7 +258,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv1
           padding: same
           strides: *id004
@@ -287,7 +287,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv2
           padding: same
           strides: *id004
@@ -316,7 +316,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv3
           padding: same
           strides: *id004
@@ -345,7 +345,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv4
           padding: same
           strides: *id004
@@ -362,8 +362,8 @@ config:
           data_format: channels_last
           name: block3_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block3_conv4
@@ -388,7 +388,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv1
           padding: same
           strides: *id004
@@ -417,7 +417,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv2
           padding: same
           strides: *id004
@@ -446,7 +446,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv3
           padding: same
           strides: *id004
@@ -475,7 +475,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv4
           padding: same
           strides: *id004
@@ -492,8 +492,8 @@ config:
           data_format: channels_last
           name: block4_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block4_conv4
@@ -518,7 +518,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv1
           padding: same
           strides: *id004
@@ -547,13 +547,13 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv2
           padding: same
           strides: *id004
-          trainable: &id007 !!python/object/apply:numpy.core.multiarray.scalar
+          trainable: &id007 
           - *id006
-          - !!binary |
+          -  |
             AQ==
           use_bias: true
         inbound_nodes:
@@ -579,7 +579,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv3
           padding: same
           strides: *id004
@@ -608,7 +608,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv4
           padding: same
           strides: *id004
@@ -625,8 +625,8 @@ config:
           data_format: channels_last
           name: block5_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block5_conv4
@@ -661,7 +661,7 @@ config:
       layers:
       - class_name: InputLayer
         config:
-          batch_input_shape: !!python/tuple [null, null, null, 3]
+          batch_input_shape:   [null, null, null, 3]
           dtype: float32
           name: input_4
           sparse: false
@@ -684,7 +684,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block1_conv1
           padding: same
           strides: *id004
@@ -713,7 +713,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block1_conv2
           padding: same
           strides: *id004
@@ -730,8 +730,8 @@ config:
           data_format: channels_last
           name: block1_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block1_conv2
@@ -756,7 +756,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block2_conv1
           padding: same
           strides: *id004
@@ -785,7 +785,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block2_conv2
           padding: same
           strides: *id004
@@ -802,8 +802,8 @@ config:
           data_format: channels_last
           name: block2_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block2_conv2
@@ -828,7 +828,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv1
           padding: same
           strides: *id004
@@ -857,7 +857,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv2
           padding: same
           strides: *id004
@@ -886,7 +886,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv3
           padding: same
           strides: *id004
@@ -903,8 +903,8 @@ config:
           data_format: channels_last
           name: block3_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block3_conv3
@@ -929,7 +929,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv1
           padding: same
           strides: *id004
@@ -958,7 +958,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv2
           padding: same
           strides: *id004
@@ -987,7 +987,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv3
           padding: same
           strides: *id004
@@ -1004,8 +1004,8 @@ config:
           data_format: channels_last
           name: block4_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block4_conv3
@@ -1030,7 +1030,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv1
           padding: same
           strides: *id004
@@ -1059,7 +1059,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv2
           padding: same
           strides: *id004
@@ -1088,7 +1088,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv3
           padding: same
           strides: *id004
@@ -1105,8 +1105,8 @@ config:
           data_format: channels_last
           name: block5_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block5_conv3

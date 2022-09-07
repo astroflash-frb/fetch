@@ -7,7 +7,7 @@ config:
   layers:
   - class_name: InputLayer
     config:
-      batch_input_shape: !!python/tuple [null, 256, 256, 1]
+      batch_input_shape:   [null, 256, 256, 1]
       dtype: float32
       name: data_freq_time
       sparse: false
@@ -15,7 +15,7 @@ config:
     name: data_freq_time
   - class_name: InputLayer
     config:
-      batch_input_shape: !!python/tuple [null, 256, 256, 1]
+      batch_input_shape:   [null, 256, 256, 1]
       dtype: float32
       name: data_dm_time
       sparse: false
@@ -31,17 +31,17 @@ config:
         config: {}
       bias_regularizer: null
       data_format: channels_last
-      dilation_rate: &id001 !!python/tuple [1, 1]
+      dilation_rate: &id001   [1, 1]
       filters: 3
       kernel_constraint: null
       kernel_initializer:
         class_name: VarianceScaling
         config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
       kernel_regularizer: null
-      kernel_size: &id002 !!python/tuple [2, 2]
+      kernel_size: &id002   [2, 2]
       name: conv2d_1__0
       padding: valid
-      strides: &id003 !!python/tuple [1, 1]
+      strides: &id003   [1, 1]
       trainable: true
       use_bias: true
     inbound_nodes:
@@ -86,7 +86,7 @@ config:
       layers:
       - class_name: InputLayer
         config:
-          batch_input_shape: !!python/tuple [null, null, null, 3]
+          batch_input_shape:   [null, null, null, 3]
           dtype: float32
           name: input_2
           sparse: false
@@ -109,15 +109,15 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block1_conv1
           padding: same
-          strides: &id004 !!python/tuple [1, 1]
-          trainable: &id005 !!python/object/apply:numpy.core.multiarray.scalar
-          - &id006 !!python/object/apply:numpy.dtype
+          strides: &id004   [1, 1]
+          trainable: &id005
+          - &id006
             args: [b1, 0, 1]
-            state: !!python/tuple [3, '|', null, null, null, -1, -1, 0]
-          - !!binary |
+            state:   [3, '|', null, null, null, -1, -1, 0]
+          -  |
             AA==
           use_bias: true
         inbound_nodes:
@@ -143,7 +143,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block1_conv2
           padding: same
           strides: *id004
@@ -160,8 +160,8 @@ config:
           data_format: channels_last
           name: block1_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block1_conv2
@@ -186,7 +186,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block2_conv1
           padding: same
           strides: *id004
@@ -215,7 +215,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block2_conv2
           padding: same
           strides: *id004
@@ -232,8 +232,8 @@ config:
           data_format: channels_last
           name: block2_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block2_conv2
@@ -258,7 +258,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv1
           padding: same
           strides: *id004
@@ -287,7 +287,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv2
           padding: same
           strides: *id004
@@ -316,7 +316,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv3
           padding: same
           strides: *id004
@@ -345,7 +345,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block3_conv4
           padding: same
           strides: *id004
@@ -362,8 +362,8 @@ config:
           data_format: channels_last
           name: block3_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block3_conv4
@@ -388,7 +388,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv1
           padding: same
           strides: *id004
@@ -417,7 +417,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv2
           padding: same
           strides: *id004
@@ -446,7 +446,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv3
           padding: same
           strides: *id004
@@ -475,7 +475,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block4_conv4
           padding: same
           strides: *id004
@@ -492,8 +492,8 @@ config:
           data_format: channels_last
           name: block4_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block4_conv4
@@ -518,7 +518,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv1
           padding: same
           strides: *id004
@@ -547,13 +547,13 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv2
           padding: same
           strides: *id004
-          trainable: &id007 !!python/object/apply:numpy.core.multiarray.scalar
+          trainable: &id007 
           - *id006
-          - !!binary |
+          -  |
             AQ==
           use_bias: true
         inbound_nodes:
@@ -579,7 +579,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv3
           padding: same
           strides: *id004
@@ -608,7 +608,7 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: block5_conv4
           padding: same
           strides: *id004
@@ -625,8 +625,8 @@ config:
           data_format: channels_last
           name: block5_pool
           padding: valid
-          pool_size: !!python/tuple [2, 2]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [2, 2]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block5_conv4
@@ -661,7 +661,7 @@ config:
       layers:
       - class_name: InputLayer
         config:
-          batch_input_shape: !!python/tuple [null, null, null, 3]
+          batch_input_shape:   [null, null, null, 3]
           dtype: float32
           name: input_4
           sparse: false
@@ -684,10 +684,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_3
           padding: valid
-          strides: !!python/tuple [2, 2]
+          strides:   [2, 2]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -755,10 +755,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_4
           padding: valid
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -826,10 +826,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_5
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -885,8 +885,8 @@ config:
           data_format: channels_last
           name: max_pooling2d_1
           padding: valid
-          pool_size: !!python/tuple [3, 3]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [3, 3]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - activation_3
@@ -911,10 +911,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_6
           padding: valid
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -982,10 +982,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_7
           padding: valid
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1041,8 +1041,8 @@ config:
           data_format: channels_last
           name: max_pooling2d_2
           padding: valid
-          pool_size: !!python/tuple [3, 3]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [3, 3]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - activation_5
@@ -1067,10 +1067,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_11
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1138,10 +1138,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_9
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1167,10 +1167,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_12
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1268,8 +1268,8 @@ config:
           data_format: channels_last
           name: average_pooling2d_1
           padding: same
-          pool_size: !!python/tuple [3, 3]
-          strides: !!python/tuple [1, 1]
+          pool_size:   [3, 3]
+          strides:   [1, 1]
           trainable: *id005
         inbound_nodes:
         - - - max_pooling2d_2
@@ -1294,10 +1294,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_8
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1323,10 +1323,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [5, 5]
+          kernel_size:   [5, 5]
           name: conv2d_10
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1352,10 +1352,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_13
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1381,10 +1381,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_14
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1601,10 +1601,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_18
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1672,10 +1672,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_16
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1701,10 +1701,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_19
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1814,10 +1814,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_15
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1843,10 +1843,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_17
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -1872,10 +1872,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_20
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2046,10 +2046,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block35_1_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -2061,7 +2061,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.17}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -2072,7 +2072,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block35_1
-          output_shape: !!python/tuple [null, null, 320]
+          output_shape:   [null, null, 320]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -2113,10 +2113,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_24
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2184,10 +2184,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_22
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2213,10 +2213,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_25
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2326,10 +2326,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_21
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2355,10 +2355,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_23
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2384,10 +2384,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_26
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2558,10 +2558,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block35_2_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -2573,7 +2573,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.17}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -2584,7 +2584,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block35_2
-          output_shape: !!python/tuple [null, null, 320]
+          output_shape:   [null, null, 320]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -2625,10 +2625,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_30
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2696,10 +2696,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_28
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2725,10 +2725,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_31
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2838,10 +2838,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_27
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2867,10 +2867,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_29
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -2896,10 +2896,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_32
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3070,10 +3070,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block35_3_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -3085,7 +3085,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.17}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -3096,7 +3096,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block35_3
-          output_shape: !!python/tuple [null, null, 320]
+          output_shape:   [null, null, 320]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -3137,10 +3137,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_36
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3208,10 +3208,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_34
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3237,10 +3237,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_37
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3350,10 +3350,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_33
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3379,10 +3379,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_35
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3408,10 +3408,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_38
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3582,10 +3582,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block35_4_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -3597,7 +3597,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.17}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -3608,7 +3608,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block35_4
-          output_shape: !!python/tuple [null, null, 320]
+          output_shape:   [null, null, 320]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -3649,10 +3649,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_42
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3720,10 +3720,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_40
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3749,10 +3749,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_43
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3862,10 +3862,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_39
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3891,10 +3891,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_41
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -3920,10 +3920,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_44
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4094,10 +4094,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block35_5_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -4109,7 +4109,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.17}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -4120,7 +4120,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block35_5
-          output_shape: !!python/tuple [null, null, 320]
+          output_shape:   [null, null, 320]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -4161,10 +4161,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_48
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4232,10 +4232,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_46
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4261,10 +4261,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_49
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4374,10 +4374,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_45
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4403,10 +4403,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_47
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4432,10 +4432,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_50
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4606,10 +4606,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block35_6_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -4621,7 +4621,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.17}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -4632,7 +4632,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block35_6
-          output_shape: !!python/tuple [null, null, 320]
+          output_shape:   [null, null, 320]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -4673,10 +4673,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_54
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4744,10 +4744,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_52
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4773,10 +4773,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_55
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4886,10 +4886,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_51
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4915,10 +4915,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_53
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -4944,10 +4944,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_56
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5118,10 +5118,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block35_7_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -5133,7 +5133,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.17}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -5144,7 +5144,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block35_7
-          output_shape: !!python/tuple [null, null, 320]
+          output_shape:   [null, null, 320]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -5185,10 +5185,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_60
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5256,10 +5256,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_58
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5285,10 +5285,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_61
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5398,10 +5398,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_57
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5427,10 +5427,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_59
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5456,10 +5456,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_62
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5630,10 +5630,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block35_8_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -5645,7 +5645,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.17}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -5656,7 +5656,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block35_8
-          output_shape: !!python/tuple [null, null, 320]
+          output_shape:   [null, null, 320]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -5697,10 +5697,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_66
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5768,10 +5768,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_64
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5797,10 +5797,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_67
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5910,10 +5910,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_63
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5939,10 +5939,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_65
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -5968,10 +5968,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_68
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6142,10 +6142,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block35_9_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -6157,7 +6157,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.17}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -6168,7 +6168,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block35_9
-          output_shape: !!python/tuple [null, null, 320]
+          output_shape:   [null, null, 320]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -6209,10 +6209,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_72
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6280,10 +6280,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_70
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6309,10 +6309,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_73
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6422,10 +6422,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_69
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6451,10 +6451,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_71
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6480,10 +6480,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_74
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6654,10 +6654,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block35_10_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -6669,7 +6669,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.17}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -6680,7 +6680,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block35_10
-          output_shape: !!python/tuple [null, null, 320]
+          output_shape:   [null, null, 320]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -6721,10 +6721,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_76
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6792,10 +6792,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_77
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6863,10 +6863,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_75
           padding: valid
-          strides: !!python/tuple [2, 2]
+          strides:   [2, 2]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6892,10 +6892,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_78
           padding: valid
-          strides: !!python/tuple [2, 2]
+          strides:   [2, 2]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -6993,8 +6993,8 @@ config:
           data_format: channels_last
           name: max_pooling2d_3
           padding: valid
-          pool_size: !!python/tuple [3, 3]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [3, 3]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block35_10_ac
@@ -7038,10 +7038,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_80
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7109,10 +7109,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_81
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7180,10 +7180,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_79
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7209,10 +7209,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_82
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7337,10 +7337,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_1_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -7352,7 +7352,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -7363,7 +7363,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_1
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -7404,10 +7404,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_84
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7475,10 +7475,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_85
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7546,10 +7546,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_83
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7575,10 +7575,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_86
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7703,10 +7703,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_2_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -7718,7 +7718,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -7729,7 +7729,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_2
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -7770,10 +7770,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_88
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7841,10 +7841,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_89
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7912,10 +7912,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_87
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -7941,10 +7941,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_90
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -8069,10 +8069,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_3_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -8084,7 +8084,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -8095,7 +8095,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_3
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -8136,10 +8136,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_92
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -8207,10 +8207,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_93
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -8278,10 +8278,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_91
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -8307,10 +8307,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_94
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -8435,10 +8435,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_4_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -8450,7 +8450,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -8461,7 +8461,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_4
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -8502,10 +8502,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_96
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -8573,10 +8573,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_97
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -8644,10 +8644,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_95
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -8673,10 +8673,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_98
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -8801,10 +8801,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_5_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -8816,7 +8816,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -8827,7 +8827,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_5
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -8868,10 +8868,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_100
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -8939,10 +8939,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_101
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9010,10 +9010,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_99
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9039,10 +9039,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_102
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9167,10 +9167,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_6_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -9182,7 +9182,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -9193,7 +9193,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_6
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -9234,10 +9234,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_104
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9305,10 +9305,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_105
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9376,10 +9376,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_103
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9405,10 +9405,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_106
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9533,10 +9533,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_7_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -9548,7 +9548,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -9559,7 +9559,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_7
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -9600,10 +9600,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_108
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9671,10 +9671,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_109
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9742,10 +9742,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_107
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9771,10 +9771,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_110
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -9899,10 +9899,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_8_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -9914,7 +9914,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -9925,7 +9925,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_8
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -9966,10 +9966,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_112
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10037,10 +10037,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_113
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10108,10 +10108,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_111
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10137,10 +10137,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_114
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10265,10 +10265,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_9_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -10280,7 +10280,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -10291,7 +10291,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_9
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -10332,10 +10332,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_116
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10403,10 +10403,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_117
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10474,10 +10474,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_115
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10503,10 +10503,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_118
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10631,10 +10631,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_10_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -10646,7 +10646,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -10657,7 +10657,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_10
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -10698,10 +10698,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_120
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10769,10 +10769,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_121
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10840,10 +10840,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_119
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10869,10 +10869,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_122
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -10997,10 +10997,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_11_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -11012,7 +11012,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -11023,7 +11023,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_11
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -11064,10 +11064,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_124
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11135,10 +11135,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_125
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11206,10 +11206,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_123
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11235,10 +11235,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_126
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11363,10 +11363,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_12_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -11378,7 +11378,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -11389,7 +11389,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_12
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -11430,10 +11430,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_128
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11501,10 +11501,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_129
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11572,10 +11572,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_127
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11601,10 +11601,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_130
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11729,10 +11729,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_13_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -11744,7 +11744,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -11755,7 +11755,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_13
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -11796,10 +11796,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_132
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11867,10 +11867,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_133
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11938,10 +11938,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_131
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -11967,10 +11967,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_134
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -12095,10 +12095,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_14_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -12110,7 +12110,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -12121,7 +12121,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_14
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -12162,10 +12162,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_136
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -12233,10 +12233,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_137
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -12304,10 +12304,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_135
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -12333,10 +12333,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_138
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -12461,10 +12461,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_15_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -12476,7 +12476,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -12487,7 +12487,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_15
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -12528,10 +12528,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_140
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -12599,10 +12599,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_141
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -12670,10 +12670,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_139
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -12699,10 +12699,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_142
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -12827,10 +12827,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_16_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -12842,7 +12842,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -12853,7 +12853,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_16
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -12894,10 +12894,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_144
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -12965,10 +12965,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_145
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13036,10 +13036,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_143
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13065,10 +13065,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_146
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13193,10 +13193,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_17_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -13208,7 +13208,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -13219,7 +13219,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_17
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -13260,10 +13260,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_148
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13331,10 +13331,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_149
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13402,10 +13402,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_147
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13431,10 +13431,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_150
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13559,10 +13559,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_18_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -13574,7 +13574,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -13585,7 +13585,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_18
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -13626,10 +13626,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_152
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13697,10 +13697,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_153
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13768,10 +13768,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_151
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13797,10 +13797,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_154
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -13925,10 +13925,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_19_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -13940,7 +13940,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -13951,7 +13951,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_19
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -13992,10 +13992,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_156
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14063,10 +14063,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 7]
+          kernel_size:   [1, 7]
           name: conv2d_157
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14134,10 +14134,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_155
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14163,10 +14163,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [7, 1]
+          kernel_size:   [7, 1]
           name: conv2d_158
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14291,10 +14291,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block17_20_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -14306,7 +14306,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.1}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -14317,7 +14317,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block17_20
-          output_shape: !!python/tuple [null, null, 1088]
+          output_shape:   [null, null, 1088]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -14358,10 +14358,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_163
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14429,10 +14429,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_159
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14458,10 +14458,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_161
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14487,10 +14487,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_164
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14642,10 +14642,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_160
           padding: valid
-          strides: !!python/tuple [2, 2]
+          strides:   [2, 2]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14671,10 +14671,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_162
           padding: valid
-          strides: !!python/tuple [2, 2]
+          strides:   [2, 2]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14700,10 +14700,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 3]
+          kernel_size:   [3, 3]
           name: conv2d_165
           padding: valid
-          strides: !!python/tuple [2, 2]
+          strides:   [2, 2]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14843,8 +14843,8 @@ config:
           data_format: channels_last
           name: max_pooling2d_4
           padding: valid
-          pool_size: !!python/tuple [3, 3]
-          strides: !!python/tuple [2, 2]
+          pool_size:   [3, 3]
+          strides:   [2, 2]
           trainable: *id005
         inbound_nodes:
         - - - block17_20_ac
@@ -14892,10 +14892,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_167
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -14963,10 +14963,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 3]
+          kernel_size:   [1, 3]
           name: conv2d_168
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15034,10 +15034,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_166
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15063,10 +15063,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 1]
+          kernel_size:   [3, 1]
           name: conv2d_169
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15191,10 +15191,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block8_1_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -15206,7 +15206,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.2}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -15217,7 +15217,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block8_1
-          output_shape: !!python/tuple [null, null, 2080]
+          output_shape:   [null, null, 2080]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -15258,10 +15258,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_171
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15329,10 +15329,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 3]
+          kernel_size:   [1, 3]
           name: conv2d_172
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15400,10 +15400,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_170
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15429,10 +15429,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 1]
+          kernel_size:   [3, 1]
           name: conv2d_173
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15557,10 +15557,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block8_2_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -15572,7 +15572,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.2}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -15583,7 +15583,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block8_2
-          output_shape: !!python/tuple [null, null, 2080]
+          output_shape:   [null, null, 2080]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -15624,10 +15624,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_175
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15695,10 +15695,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 3]
+          kernel_size:   [1, 3]
           name: conv2d_176
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15766,10 +15766,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_174
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15795,10 +15795,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 1]
+          kernel_size:   [3, 1]
           name: conv2d_177
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -15923,10 +15923,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block8_3_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -15938,7 +15938,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.2}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -15949,7 +15949,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block8_3
-          output_shape: !!python/tuple [null, null, 2080]
+          output_shape:   [null, null, 2080]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -15990,10 +15990,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_179
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16061,10 +16061,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 3]
+          kernel_size:   [1, 3]
           name: conv2d_180
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16132,10 +16132,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_178
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16161,10 +16161,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 1]
+          kernel_size:   [3, 1]
           name: conv2d_181
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16289,10 +16289,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block8_4_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -16304,7 +16304,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.2}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -16315,7 +16315,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block8_4
-          output_shape: !!python/tuple [null, null, 2080]
+          output_shape:   [null, null, 2080]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -16356,10 +16356,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_183
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16427,10 +16427,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 3]
+          kernel_size:   [1, 3]
           name: conv2d_184
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16498,10 +16498,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_182
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16527,10 +16527,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 1]
+          kernel_size:   [3, 1]
           name: conv2d_185
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16655,10 +16655,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block8_5_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -16670,7 +16670,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.2}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -16681,7 +16681,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block8_5
-          output_shape: !!python/tuple [null, null, 2080]
+          output_shape:   [null, null, 2080]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -16722,10 +16722,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_187
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16793,10 +16793,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 3]
+          kernel_size:   [1, 3]
           name: conv2d_188
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16864,10 +16864,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_186
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -16893,10 +16893,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 1]
+          kernel_size:   [3, 1]
           name: conv2d_189
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -17021,10 +17021,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block8_6_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -17036,7 +17036,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.2}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -17047,7 +17047,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block8_6
-          output_shape: !!python/tuple [null, null, 2080]
+          output_shape:   [null, null, 2080]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -17088,10 +17088,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_191
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -17159,10 +17159,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 3]
+          kernel_size:   [1, 3]
           name: conv2d_192
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -17230,10 +17230,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_190
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -17259,10 +17259,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 1]
+          kernel_size:   [3, 1]
           name: conv2d_193
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -17387,10 +17387,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block8_7_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -17402,7 +17402,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.2}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -17413,7 +17413,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block8_7
-          output_shape: !!python/tuple [null, null, 2080]
+          output_shape:   [null, null, 2080]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -17454,10 +17454,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_195
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -17525,10 +17525,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 3]
+          kernel_size:   [1, 3]
           name: conv2d_196
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -17596,10 +17596,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_194
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -17625,10 +17625,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 1]
+          kernel_size:   [3, 1]
           name: conv2d_197
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: false
         inbound_nodes:
@@ -17753,10 +17753,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block8_8_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id005
           use_bias: true
         inbound_nodes:
@@ -17768,7 +17768,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.2}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -17779,7 +17779,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block8_8
-          output_shape: !!python/tuple [null, null, 2080]
+          output_shape:   [null, null, 2080]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -17820,10 +17820,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_199
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: false
         inbound_nodes:
@@ -17891,10 +17891,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 3]
+          kernel_size:   [1, 3]
           name: conv2d_200
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: false
         inbound_nodes:
@@ -17962,10 +17962,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_198
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: false
         inbound_nodes:
@@ -17991,10 +17991,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 1]
+          kernel_size:   [3, 1]
           name: conv2d_201
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: false
         inbound_nodes:
@@ -18119,10 +18119,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block8_9_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: true
         inbound_nodes:
@@ -18134,7 +18134,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 0.2}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -18145,7 +18145,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block8_9
-          output_shape: !!python/tuple [null, null, 2080]
+          output_shape:   [null, null, 2080]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -18186,10 +18186,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_203
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: false
         inbound_nodes:
@@ -18257,10 +18257,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 3]
+          kernel_size:   [1, 3]
           name: conv2d_204
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: false
         inbound_nodes:
@@ -18328,10 +18328,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv2d_202
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: false
         inbound_nodes:
@@ -18357,10 +18357,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [3, 1]
+          kernel_size:   [3, 1]
           name: conv2d_205
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: false
         inbound_nodes:
@@ -18485,10 +18485,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: block8_10_conv
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: true
         inbound_nodes:
@@ -18500,7 +18500,7 @@ config:
       - class_name: Lambda
         config:
           arguments: {scale: 1.0}
-          function: !!python/tuple ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
+          function:   ['4wIAAAAAAAAAAgAAAAMAAABTAAAAcxQAAAB8AGQBGQB8AGQCGQB8ARQAFwBTACkDTukAAAAA6QEA
 
               AACpACkC2gZpbnB1dHPaBXNjYWxlcgMAAAByAwAAAPpyL29wdC9wYWNrYWdlcy9BSS9hbmFjb25k
 
@@ -18511,7 +18511,7 @@ config:
               ', null, null]
           function_type: lambda
           name: block8_10
-          output_shape: !!python/tuple [null, null, 2080]
+          output_shape:   [null, null, 2080]
           output_shape_type: raw
           trainable: *id005
         inbound_nodes:
@@ -18541,10 +18541,10 @@ config:
             class_name: VarianceScaling
             config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
           kernel_regularizer: null
-          kernel_size: !!python/tuple [1, 1]
+          kernel_size:   [1, 1]
           name: conv_7b
           padding: same
-          strides: !!python/tuple [1, 1]
+          strides:   [1, 1]
           trainable: *id007
           use_bias: false
         inbound_nodes:
