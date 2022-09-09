@@ -5,9 +5,9 @@ import string
 import glob
 import logging
 from inspect import getsourcefile
-from os.path import abspath
+from os.path import dirname
 
-path = abspath(getsourcefile(lambda:0))
+path = dirname(getsourcefile(lambda:0))
 
 logger = logging.getLogger()
 format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -15,8 +15,8 @@ logging.basicConfig(level=logging.INFO, format=format)
 logging.getLogger('pika').setLevel(logging.INFO)
 
 
-model_idxs = list(string.ascii_lowercase)[0:11]
-
+model_idxs = list(string.ascii_lowercase)[0:2]
+logging.info(f'path is {path}')
 #path = '/home/franz/git/astroflash-fetch/fetch/'
 for model_idx in model_idxs:
     model_yaml = glob.glob(f'{path}/models/{model_idx}_FT*//*yaml')[0]
