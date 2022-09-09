@@ -4,7 +4,7 @@ import glob
 import logging
 import os
 import string
-
+import json
 import numpy as np
 import pandas as pd
 from tensorflow.keras.models import Model
@@ -85,11 +85,12 @@ def get_model(model_idx):
     # Get the model from the folder
     logger.info(f"Getting model {model_idx}")
     path = os.path.split(__file__)[0]
-    model_yaml = glob.glob(f"{path}/models/{model_idx}_FT*/*yaml")[0]
+    model_json = glob.glob(f"{path}/models/{model_idx}_FT*/*json")[0]
 
-    # Read the model from the yaml
-    with open(model_yaml, "r") as y:
-        model =  model_from_json(y.read())
+    # Read the model from the json
+    with open(model_json, "r") as j:
+        model = json.load(j)
+    model = model_from_json(model)
 
     # get the model weights, if not present download them.
     model_list = pd.read_csv(f"{path}/models/model_list.csv")
