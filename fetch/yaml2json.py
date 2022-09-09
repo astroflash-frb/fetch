@@ -4,6 +4,10 @@ from fetch.utils import get_model
 import string
 import glob
 import logging
+from inspect import getsourcefile
+from os.path import abspath
+
+path = abspath(getsourcefile(lambda:0))
 
 logger = logging.getLogger()
 format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -13,7 +17,7 @@ logging.getLogger('pika').setLevel(logging.INFO)
 
 model_idxs = list(string.ascii_lowercase)[0:11]
 
-path = '/home/franz/git/astroflash-fetch/fetch/'
+#path = '/home/franz/git/astroflash-fetch/fetch/'
 for model_idx in model_idxs:
     model_yaml = glob.glob(f'{path}/models/{model_idx}_FT*//*yaml')[0]
     model_json = model_yaml.replace('.yaml', '.json')
