@@ -81,6 +81,7 @@ if __name__ == "__main__":
     for data_dir in args.data_dir:
 
         cands_to_eval = glob.glob(f"{data_dir}/*h5")
+        dms = [cand.split('dm_')[1].split('_snr')[0] for cand in cands_to_eval]
 
         if len(cands_to_eval) == 0:
             logger.warning(f"No candidates to evaluate in directory: {data_dir}")
@@ -109,6 +110,7 @@ if __name__ == "__main__":
         # Save results
         results_dict = {}
         results_dict["candidate"] = cands_to_eval
+        results_dict['dm'] = dms
         results_dict["probability"] = probs[:, 1]
         results_dict["label"] = np.round(probs[:, 1] >= args.probability)
         results_file = data_dir + f"/results_{args.model}.csv"
