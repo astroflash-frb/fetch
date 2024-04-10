@@ -65,7 +65,7 @@ def cand2h5(cand_val):
     cand.get_chunk()
     cand.fp.close()
     logging.info('Got Chunk')
-    cand=gpu_dedisp_and_dmt_crop(cand)
+    cand=gpu_dedisp_and_dmt_crop(cand, dm_range_scale=args.dm_range_scale)
     logging.info('Done with DMT')
     cand.dedispersed=resize(cand.dedispersed, (256,256))
     logging.info('resized FT')
@@ -90,6 +90,8 @@ if __name__ == '__main__':
                         action='store_true')
     parser.add_argument('-o', '--fout', help='Output file directory for candidate h5', type=str)
     parser.add_argument('-opt', '--opt_dm', dest='opt_dm', help='Optimise DM', action='store_true', default=False)
+    parser.add_argument('-s', '--dm_range_scale', dest='dm_range_scale', type=float, default=1.0,
+                        help='Scaling factor to zoom in on bow tie in dm-time plot for low frequencies. Default:1.0')
     values = parser.parse_args()
 
     logging_format = '%(asctime)s - %(funcName)s -%(name)s - %(levelname)s - %(message)s'
